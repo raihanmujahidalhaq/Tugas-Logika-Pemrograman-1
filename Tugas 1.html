@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raihan Mujahid Alhaq</title>
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Raihan Mujahid A</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0f14;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        :root {
+            --gold: #c6a66b;
+            --dark: #0b0f14;
+            --card: #151c25;
+            --muted: #a0a8b5;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: rgba(11, 15, 20, 0.95);
+            border-bottom: 1px solid #29303a;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo span,
+        h1 span {
+            color: var(--gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* BERANDA */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            padding: 60px 0;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .label {
+            color: var(--gold);
+            letter-spacing: 4px;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 19px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 500px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #0b0f14;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .photo {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            box-shadow: 15px 15px 0 #202a36;
+        }
+
+        /* BAGIAN UMUM */
+        section:not(.hero) {
+            padding: 85px 0;
+            border-top: 1px solid #252d38;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            color: var(--gold);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            margin-bottom: 35px;
+        }
+
+        /* TENTANG SAYA */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-card {
+            background: var(--card);
+            border: 1px solid #29303a;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .info-card h3 {
+            color: var(--gold);
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: white;
+            overflow-wrap: anywhere;
+        }
+
+        /* KEAHLIAN */
+        #keahlian {
+            background: #0e131a;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid #29303a;
+            padding: 30px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--gold);
+        }
+
+        .skill-card .number {
+            color: var(--gold);
+            font-size: 14px;
+        }
+
+        .skill-card h3 {
+            margin: 15px 0 10px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* KONTAK */
+        .contact-box {
+            background: var(--card);
+            border: 1px solid #29303a;
+            padding: 30px;
+            border-radius: 6px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .socials a {
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 10px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: var(--gold);
+            color: var(--dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #29303a;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        /* RESPONSIVE HP */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 50px 0;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .photo {
+                width: 240px;
+                height: 300px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#beranda" class="logo">
+                MY<span>PROFILE.</span>
+            </a>
+
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#keahlian">Keahlian</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- BERANDA -->
+        <div class="container">
+            <section class="hero" id="beranda">
+                <div class="hero-text">
+                    <div class="label">WELCOME TO MY PROFILE</div>
+
+                    <h1>Halo, Saya<br><span>ijad.</span></h1>
+
+                    <h2>Mahasiswa | Kreatif | Berorientasi Masa Depan</h2>
+
+                    <p>
+                        Selamat datang di website profil pribadi saya.
+                        Saya adalah seseorang yang senang belajar, senang mendapatkan teman baru,
+                        mengembangkan kemampuan, dan mencoba hal-hal baru
+                        untuk mencapai masa depan yang lebih baik.
+                    </p>
+
+                    <a href="#tentang" class="btn">Kenali Saya ↗</a>
+                </div>
+
+                <div>
+                    <img src="Raihan.jpeg" alt="Foto profil saya"
+                         class="photo">
+                </div>
+            </section>
+        </div>
+
+        <!-- TENTANG SAYA -->
+        <section id="tentang">
+            <div class="container">
+                <h2 class="section-title">Tentang <span>Saya.</span></h2>
+
+                <p class="subtitle">
+                    Informasi singkat mengenai diri saya.
+                </p>
+
+                <div class="about-content">
+                    <div>
+                        <p>
+                            Halo, nama saya Raihan Mujahid Alhaq. Saya adalah seorang mahasiswa S1 Teknik Logistik
+                            dari Universitas pendidikan Indonesia. Saya senang aktif diorganisasi dan selalu menambah relasi disetiap 
+                            kesempatan. Saya juga selalu berorientasi panjang untuk masa depan.
+                        </p>
+
+                        <p>
+                            Saya percaya bahwa kedisiplinan, kerja keras,
+                            dan kemauan untuk terus belajar merupakan
+                            kunci untuk meraih tujuan hidup.
+                        </p>
+                    </div>
+
+                    <div class="info">
+                        <div class="info-card">
+                            <h3>Nama Lengkap</h3>
+                            <p>Raihan Mujahid Alhaq</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>PENDIDIKAN</h3>
+                            <p>Universitas Pendidikan Indonesia</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>DOMISILI</h3>
+                            <p>Kota Bandung</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>HOBI</h3>
+                            <p>Badminton,Futsal,dan lainya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KEAHLIAN -->
+        <section id="keahlian">
+            <div class="container">
+                <h2 class="section-title">
+                    Keahlian <span>& Minat.</span>
+                </h2>
+
+                <p class="subtitle">
+                    Bidang yang saya sukai dan ingin kembangkan.
+                </p>
+
+                <div class="skills">
+                    <div class="skill-card">
+                        <div class="number">01 / SKILL</div>
+                        <h3>Teknik Logistk</h3>
+                        <p>
+                            Mempelajari dan memahami rangkaian logistik baik laut darat udara. Serta detail 
+                            dari awal hingga akhir proses logistik itu terjadi.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="number">02 / SKILL</div>
+                        <h3>Kreativitas</h3>
+                        <p>
+                            Mengembangkan ide dan membuat
+                            sesuatu yang menarik serta bermanfaat.
+                        </p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="number">03 / SKILL</div>
+                        <h3>Pengembangan Diri</h3>
+                        <p>
+                            Meningkatkan kedisiplinan, kemampuan,
+                            dan kualitas diri setiap hari.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KONTAK -->
+        <section id="kontak">
+            <div class="container">
+                <h2 class="section-title">
+                    Hubungi <span>Saya.</span>
+                </h2>
+
+                <p class="subtitle">
+                    Mari terhubung melalui media sosial.
+                </p>
+
+                <div class="contact-box">
+                    <h3>Let's Connect!</h3>
+
+                    <p>
+                        Saya senang berkenalan dan berbagi pengalaman
+                        dengan orang-orang baru.
+                    </p>
+
+                    <div class="socials">
+                        <a href="mailto:raihanmujahidalhaq@upi.edu">
+                            Email ↗
+                        </a>
+
+                        <a href="https://www.instagram.com/alhaqmujahid_?obrf=dTc3MXk5YWxwMmE0&utm_source=qr"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Instagram ↗
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/raihan-mujahid-alhaq-37254a403"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            LinkedIn ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            © <span id="tahun"></span>
+            <span>Raihan Mujahid A</span> | Personal Profile
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("tahun").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>
